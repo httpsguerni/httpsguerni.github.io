@@ -1,0 +1,14 @@
+<main>
+  <section class="hero">
+    <div class="prompt">{{ info.prompt }}</div>
+    <h1><span class="brace">&lt;</span>{{ info.usr }}<span class="brace">/&gt;</span></h1>
+    <div class="role">{{ displayedRole }}<span class="cursor"></span></div>
+    <p class="bio">{{ info.bio }}</p>
+    <div class="links">
+      <a routerLink="/projetos">{{ info.projetos }}</a>
+      <a routerLink="/contato">{{ info.contato }}</a>
+    </div>
+  </section>
+
+  <footer>{{ info.ref }}</footer>
+</main>

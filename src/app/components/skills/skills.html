@@ -1,0 +1,23 @@
+
+<!--  
+ *Portfolio — httpsguerni
+ * @author Saiury
+ * @see https://github.com/httpsguerni 
+-->
+
+
+<main>
+  <section>
+    <div class="tag">{{ info.tag }}</div>
+    <h2>{{ info.stack }}</h2>
+
+    <div class="skill-group" *ngFor="let cat of categorias">
+      <h3 class="skill-category">{{ cat.nome }}</h3>
+      <div class="skills">
+        <span class="skill" *ngFor="let item of cat.itens">{{ item }}</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>{{ info.ref }}</footer>
+</main>

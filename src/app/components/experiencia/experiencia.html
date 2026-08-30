@@ -1,0 +1,30 @@
+<!--  
+ *Portfolio — httpsguerni
+ * @author Saiury
+ * @see https://github.com/httpsguerni 
+-->
+
+
+<main>
+  <section>
+    <div class="tag">{{ info.tag }}</div>
+    <h2>{{ info.exp }}</h2>
+
+    <div class="timeline">
+      <div class="tl-item" *ngFor="let e of experiencias">
+        <div class="tl-dot"></div>
+        <div class="tl-period">{{ e.periodo }}</div>
+        <h3>{{ e.empresa }}</h3>
+
+        <div class="tl-sub" *ngFor="let c of e.cargos">
+          <div class="tl-sub-period">{{ c.periodo }}</div>
+          <h4>{{ c.cargo }}</h4>
+          <p>{{ c.descricao }}</p>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <footer>{{ info.ref }}</footer>
+</main>

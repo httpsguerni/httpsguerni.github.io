@@ -1,0 +1,28 @@
+<!--  
+ *Portfolio — httpsguerni
+ * @author Saiury
+ * @see https://github.com/httpsguerni 
+-->
+
+
+<main>
+  <section>
+    <div class="tag">{{ info.tag }}</div>
+    <h2>{{ info.title }}</h2>
+
+    <div class="project" *ngFor="let p of projetos">
+      <h3>{{ p.nome }}</h3>
+      <p>{{ p.descricao }}</p>
+
+      <div class="project-footer">
+        <div class="stack">{{ p.stack }}</div>
+        <div class="project-links">
+          <a [href]="p.github" target="_blank" rel="noopener noreferrer">Código</a>
+          <a *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noopener noreferrer">Ver ao vivo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>{{ info.ref }}</footer>
+</main>

@@ -1,0 +1,49 @@
+
+<!--  
+ *Portfolio — httpsguerni
+ * @author Saiury
+ * @see https://github.com/httpsguerni 
+-->
+
+<main>
+  <section class="contact">
+    <div class="tag">{{ info.tag }}</div>
+    <h2>{{ info.title }}</h2>
+    <p>{{ info.subtitle }}</p>
+
+    <div class="contact-primary">
+      <a class="contact-email" href="mailto:{{ email }}">{{ email }}</a>
+      <div class="contact-socials">
+        <a [href]="github" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a [href]="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+
+    <form (ngSubmit)="enviar()">
+      <input
+        type="text"
+        name="nome"
+        placeholder="Seu nome"
+        [(ngModel)]="nome"
+        required
+      />
+      <input
+        type="email"
+        name="emailRemetente"
+        placeholder="Seu email"
+        [(ngModel)]="emailRemetente"
+        required
+      />
+      <textarea
+        name="mensagem"
+        placeholder="Sua mensagem"
+        rows="5"
+        [(ngModel)]="mensagem"
+        required
+      ></textarea>
+      <button type="submit">Enviar mensagem</button>
+    </form>
+  </section>
+
+  <footer>{{ info.ref }}</footer>
+</main>

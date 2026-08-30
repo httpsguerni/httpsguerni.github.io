@@ -1,0 +1,38 @@
+<!--  
+ *Portfolio — httpsguerni
+ * @author Saiury
+ * @see https://github.com/httpsguerni 
+-->
+
+
+<main>
+  <section>
+    <div class="tag">{{ info.tag }}</div>
+    <h2>{{ info.education }}</h2>
+
+    <div class="timeline">
+      <div class="tl-item" *ngFor="let f of formacoes">
+        <div class="tl-dot"></div>
+        <div class="tl-period">{{ f.periodoI }} – {{ f.periodoF }} - {{f.tipo}}</div>
+        <h3><a href="{{info.educationlink}}" target="_blank" rel="noopener noreferrer">{{ f.curso }}</a> — {{ f.instituicao }}</h3>
+        <p>{{ f.descricao }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="tag">{{ info.coursesTag }}</div>
+    <h2>{{ info.courses }}</h2>
+
+    <div class="timeline">
+      <div class="tl-item" *ngFor="let c of cursos">
+        <div class="tl-dot"></div>
+        <div class="tl-period">{{ c.ano }}</div>
+        <h3><a href="{{info.courseslink}}" target="_blank" rel="noopener noreferrer">{{ c.nome }} </a></h3>
+        <p>{{ c.instituicao }}</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>{{ info.ref }}</footer>
+</main>

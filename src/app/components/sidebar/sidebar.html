@@ -1,0 +1,38 @@
+<!--  
+ *Portfolio — httpsguerni
+ * @author Saiury
+ * @see https://github.com/httpsguerni 
+-->
+
+
+<ng-container>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" #navToggle>
+
+  <div class="mobile-bar">
+    <a routerLink="/home" class="brand" (click)="fecharMenu()"><span class="brace">&lt;</span>{{ info.name }}<span class="brace">/&gt;</span></a>
+    <label for="nav-toggle" class="hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <a routerLink="/home" class="brand" (click)="fecharMenu()"><span class="brace">&lt;</span>{{ info.name }}<span class="brace">/&gt;</span></a>
+      <div class="role">{{ info.role }}</div>
+      <nav>
+        <ul>
+          <li><a routerLink="/home" routerLinkActive="active" (click)="fecharMenu()">{{ info.inicio }}</a></li>
+          <li><a routerLink="/skills" routerLinkActive="active" (click)="fecharMenu()">{{ info.skills }}</a></li>
+          <li><a routerLink="/formacao" routerLinkActive="active" (click)="fecharMenu()">{{ info.formacao }}</a></li>
+          <li><a routerLink="/experiencia" routerLinkActive="active" (click)="fecharMenu()">{{ info.experiencia }}</a></li>
+          <li><a routerLink="/projetos" routerLinkActive="active" (click)="fecharMenu()">{{ info.projetos }}</a></li>
+          <li><a routerLink="/contato" routerLinkActive="active" (click)="fecharMenu()">{{ info.contato }}</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="sidebar-bottom">
+      <a [href]="info.github" target="_blank" rel="noopener noreferrer">{{ info.gh }}</a>
+      <a [href]="info.linkedin" target="_blank" rel="noopener noreferrer">{{ info.ld }}</a>
+    </div>
+  </aside>
+</ng-container>
