@@ -60,7 +60,8 @@ export class Projetos {
       nome: "Cifra ADFGVX (2022)",
       descricao: "Projeto de criptografia em Python desenvolvido para uso educacional. Inspirado na Cifra ADFGVX.",
       stack: "Python",
-      github: "https://github.com/httpsguerni/cifra-adfgvx",
+      github: "https://github.com/httpsguerni/cifra-adfgvx", 
+      demo:"https://httpsguerni.github.io/cifra-adfgvx/"
 
     },
 
