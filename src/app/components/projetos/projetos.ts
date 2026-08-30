@@ -43,6 +43,7 @@ export class Projetos {
       descricao: "Coletânea de desafios de design de telas por referência visual, utilizando o Angular e CSS.",
       stack: "Angular · HTML · CSS · TypeScript",
       github: "https://github.com/httpsguerni/Angular",
+      demo:"https://httpsguerni.github.io/Desafio_Amazon/"
 
     },
 
