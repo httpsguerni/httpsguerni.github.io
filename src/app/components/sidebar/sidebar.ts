@@ -1,5 +1,6 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, ViewChild, ElementRef, OnInit, OnDestroy } from '@angular/core';
+import { RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
+import { Subscription, filter } from 'rxjs';
 
 @Component({
   imports: [RouterLink, RouterLinkActive],
@@ -7,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './sidebar.css',
   templateUrl: './sidebar.html',
 })
-export class Sidebar {
+export class Sidebar implements OnInit, OnDestroy {
   @ViewChild('navToggle') navToggle!: ElementRef<HTMLInputElement>;
 
   info = {
@@ -24,6 +25,20 @@ export class Sidebar {
     gh: "GitHub",
     ld: "LinkedIn",
   };
+
+  private routerSub?: Subscription;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.routerSub = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => this.fecharMenu());
+  }
+
+  ngOnDestroy(): void {
+    this.routerSub?.unsubscribe();
+  }
 
   fecharMenu(): void {
     if (this.navToggle) {
